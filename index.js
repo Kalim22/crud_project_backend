@@ -13,6 +13,10 @@ app.use(cors({
 app.use('/apiv1/', require('./routes/ProductRoutes'))
 app.use('/apiv1/', require('./routes/userRoutes'))
 
+app.get('/', (req, res) => {
+    return res.json({message: 'Server live'})
+})
+
 const port = 8000
 app.listen(port, (err) => {
     if(err){
